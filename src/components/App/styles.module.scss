@@ -1,0 +1,19 @@
+@import "../../global-styles/cssVariables";
+.footerWrap {
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  min-height:100%;
+  width: 100%;
+  padding-bottom: 64px;
+}
+.content {
+  flex-grow: 1;
+  padding: 0 var(--gutter);
+  text-align: center;
+  @media(min-width: $tablet-break) {
+    width: 100%; 
+    margin: 0 auto; 
+    max-width: 880px;
+  }
+}

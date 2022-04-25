@@ -1,0 +1,16 @@
+.srOnly {
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+}
+.headline {
+    font-family: 'Chango', sans-serif;
+    letter-spacing: .025em;
+    line-height: 1;
+    font-weight: 900;
+    font-size: 28px; 
+    margin:  .75em 0;
+}

@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Chango&family=Lato:wght@400;900&display=swap');
+
+@import "./global-styles/reset.scss";
+@import "./global-styles/cssVariables";
+:root {
+  --gutter: 16px; 
+  @media(min-width: $tablet-break) {
+    --gutter: 24px; 
+  }
+}
+html {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color:#333;
+  overflow: hidden;
+  position:relative;
+  min-height: 100%;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

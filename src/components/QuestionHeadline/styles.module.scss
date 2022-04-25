@@ -1,0 +1,8 @@
+@import "../../global-styles/cssVariables";
+.question {
+    font-size: 28px; 
+    margin:  .75em 0;
+    @media(min-width:$tablet-break) {
+        font-size: 52px;
+    }
+}

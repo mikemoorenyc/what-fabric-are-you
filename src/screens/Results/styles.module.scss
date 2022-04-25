@@ -1,0 +1,70 @@
+@import "../../global-styles/cssVariables";
+.ghost {
+    pointer-events:none; 
+    width: 75vw;
+    position: relative;
+    height: 75vw;
+    margin: 0  auto; 
+    background:#333;
+    opacity: .05;
+    &:after {
+        content:'';
+        display:block; 
+        height: 12px;
+        width: 90%;
+        background: #333;
+        left: 0;
+        bottom: -24px;
+        position:absolute;
+    }
+    @media(min-width: $tablet-break) {
+        margin: 0;
+        width: 250px;
+        height: 250px;
+
+    }
+}
+.swatchContainer {
+    @media(min-width: $tablet-break) {
+        width: 250px;
+        height: 250px;
+        margin-right: var(--gutter);
+    }
+}
+.swatch {
+    border: 3px solid #333;
+    border-radius: 3px;
+    overflow:hidden; 
+    width: 75vw;
+    height: 75vw;
+    @media(min-width: $tablet-break) {
+        width: 100%;
+        height: auto; 
+    }
+}
+.name {
+    font-size: 20px; 
+    margin-top: .75em;
+    @media(min-width: $tablet-break) {
+        margin-top: 0;
+        font-size: 48px;
+    }
+}
+.buttonContainer {
+    margin: 1em 0;
+    @media(min-width: $tablet-break) {
+        font-size: 24px;
+    }
+}
+.resultData {
+    @media(min-width:$tablet-break) {
+        display:flex;
+        text-align: left;
+        
+    }
+}
+.meta {
+    @media(min-width: $tablet-break) {
+        flex: 1;
+    }
+}

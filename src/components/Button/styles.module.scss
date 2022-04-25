@@ -1,0 +1,18 @@
+@import "../../global-styles/cssVariables";
+.button {
+    border: 0;
+    color: white; 
+    font-family: "Lato", sans-serif;
+    background: #333;
+    font-size: 16px;
+    line-height: 1;
+    padding: calc(1em * (11/16)) calc(1em * (22/16)) calc(1em * (12/16));
+    border-radius: 3px; 
+    &[disabled] {
+        opacity: .75;
+        pointer-events: none;
+    }
+    @media(min-width: $tablet-break) {
+        font-size: 20px;
+    }
+}
