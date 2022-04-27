@@ -52,7 +52,7 @@ const Question = () => {
                 <QuestionHeadline text={qSet.question} />
                 
                 <div className={styles.choiceContainer}>
-                    {qSet.choices.map((e,i) => <button className={`${styles.choice} ${i === currentSelection? styles.selected:""}`} onClick={(e) => {makeSelection(e,i)}}   key={i+currentQuestion}>
+                    {qSet.choices.map((e,i) => <button className={`${styles.choice} ${i === currentSelection? styles.selected:""}`} onClick={(e) => {makeSelection(e,i)}}   key={`${currentQuestion},${i}`}>
                         <span className={styles.imgContainer}><img key={e.img} className={styles.img} src={e.img} alt={e.name} /></span>
                         <span className={styles.choiceTitle}>{e.name}</span>
                     </button>   )}
