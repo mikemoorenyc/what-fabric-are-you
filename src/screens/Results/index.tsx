@@ -87,12 +87,12 @@ const Results = () => {
     return <div className={styles.resultContainer}>
         <QuestionHeadline text={"This is your fabric! "} />
     
-        {["idle","loading"].includes(status)?<div className={styles.ghost} aria-hidden role="presentation"/> : null}
-        {status === "error"? <div className={styles.errorText}>
+        {["idle","loading"].includes(status) && <div className={styles.ghost} aria-hidden role="presentation"/> }
+        {status === "error" && <div className={styles.errorText}>
             <p>We couldn't find any fabric for you</p>
             <Link to={"/"}>Start Over</Link>
-            </div>:null}
-        {status === "success" && selectedItem !== null? <>
+            </div>}
+        { (status === "success" && selectedItem !== null ) && <>
         <div className={styles.resultData}> 
             <a className={styles.swatchContainer} href={`https://www.spoonflower.com/en/fabric/${selectedItem.designId}`} target="_blank" rel="noreferrer"> 
                 <img className={styles.swatch} src={`https://garden.spoonflower.com/c/${selectedItem.designId}/p/f/m/${selectedItem.thumbnail}`} alt={selectedItem.name}/>
@@ -106,8 +106,7 @@ const Results = () => {
             </div>
         </div>
             
-        </>:
-        null
+        </>
         }
     </div>
 }
