@@ -2,11 +2,14 @@ import React from "react";
 import styles from "./styles.module.scss";
 import utilityStyles from "../../global-styles/utilities.module.scss";
 interface QuestionHeadlineProps {
-    text:string
+    text:string,
+    as?:string
 }
 
-const QuestionHeadline = ({text}:QuestionHeadlineProps) => <h2 className={`${styles.question} ${utilityStyles.headline}`}>{text}</h2>
+const QuestionHeadline = ({text}:QuestionHeadlineProps) => React.createElement(as || "h2",{className:`${styles.question} ${utilityStyles.headline}`}, text)
 
 
 
 export default QuestionHeadline
+    
+    
