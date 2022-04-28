@@ -48,21 +48,45 @@ const Question = () => {
     return (
         <>
             
-            <div>
-                <QuestionHeadline text={qSet.question} />
-                
-                <div className={styles.choiceContainer}>
-                    {qSet.choices.map((e,i) => <button className={`${styles.choice} ${i === currentSelection? styles.selected:""}`} onClick={(e) => {makeSelection(e,i)}}   key={`${currentQuestion},${i}`}>
-                        <span className={styles.imgContainer}><img key={e.img} className={styles.img} src={e.img} alt={e.name} /></span>
-                        <span className={styles.choiceTitle}>{e.name}</span>
-                    </button>   )}
+            <form> 
+                <fieldset >
+                    <QuestionHeadline as="legend" text={qSet.question} />
+                    <div className={styles.choiceContainer}>
+                        {qSet.choices.map((e,i) =>{
+                            const key = `${currentQuestion},${i}
+                            return <label for={key}>
+                                <input 
+                                    type="radio" 
+                                    value={e.name} id={key} 
+                                    name={`q-${currentQuestion}`} 
+                                    className={srOnly} 
+                                    onClic/>
+                                <span className={styles.imgContainer}>
+                                    <img aria-hidden key={e.img} className={styles.img} src={e.img} alt={e.name} />
+                                </span>
+                                <span className={styles.choiceTitle}>{e.name}</span>
+                            </label>}}
+                    </div>
+                    
+                </fieldset>
+                <div className={styles.buttonContainer}>
+                    <Button 
+                        action={nextQuestion} 
+                        text={(currentQuestion === questions.length - 1)? "See results" : "Next question"} 
+                        disabled={currentSelection === undefined}
+                        type="submit"/>
                 </div>
-            </div>
+                        
+            </form>
         
-           <div className={styles.buttonContainer}><Button action={nextQuestion} text={(currentQuestion === questions.length - 1)? "See results" : "Next question"} disabled={currentSelection === undefined} /></div> 
+            
         </>
     
     )
 }
+/*<button className={`${styles.choice} ${i === currentSelection? styles.selected:""}`} onClick={(e) => {makeSelection(e,i)}}   key={`${currentQuestion},${i}`}>
+                        <span className={styles.imgContainer}><img key={e.img} className={styles.img} src={e.img} alt={e.name} /></span>
+                        <span className={styles.choiceTitle}>{e.name}</span>
+                    </button>*/
 
 export default Question
